@@ -1,0 +1,46 @@
+package Selenium;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AllLocators {
+	
+	public static void main(String[] args) {
+		
+	WebDriver driver=new ChromeDriver();
+	ChromeOptions options = new ChromeOptions();
+	options.addArguments("--disable-notifications");
+	WebDriver driver1 = new ChromeDriver(options);
+
+
+	
+	driver.get("https://www.facebook.com/");
+	driver.manage().window().maximize();
+	
+	//Name
+	driver.findElement(By.name("email")).sendKeys("papulm98@gmail.com");
+	
+	//ID
+	driver.findElement(By.id("pass")).sendKeys("P@pul#$");
+	driver.findElement(By.name("login")).click();
+
+	
+//	LinkText & PartialLinkText
+//	driver.findElement(By.linkText("Forgotten password?")).click();
+//	driver.findElement(By.partialLinkText("pass")).click();
+	
+	
+//Class
+	List<WebElement> headerLinks = driver.findElements(By.className("x1iyjqo2 xmlsiyf x1hxoosp x1l38jg0 x1awlv9s x1i64zmx x1gz44f"));
+	System.out.println("Total number of header links:"+headerLinks.size());
+
+}
+}
+

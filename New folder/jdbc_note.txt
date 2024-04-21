@@ -1,0 +1,76 @@
+There are 5 steps to connect any java application with the database using JDBC. These steps are as follows:-
+
+1. Register the Driver class
+2. Create connection
+3. Create statement
+4. Execute queries
+5. Close connection
+==================================================
+1) Register the driver class
+
+The forName() method of Class class is used to register the driver class. This method is used to dynamically load the driver class.
+Class.forName("oracle.jdbc.driver.OracleDriver"); 
+
+2) Create the connection object
+
+The getConnection() method of DriverManager class is used to establish connection with the database. 
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Aptech","root","");  
+
+3) Create the Statement object
+
+The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database.
+Statement stmt=con.createStatement();  
+
+4) Execute the query
+
+The executeQuery() method of Statement interface is used to execute queries to the database. This method returns the object of ResultSet that can be used to get all the records of a table.
+ResultSet rs=stmt.executeQuery("select * from emp");  
+while(rs.next()){  
+System.out.println(rs.getInt(1)+" "+rs.getString(2));  
+}  
+
+5) Close the connection object
+
+By closing connection object statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.
+
+con.close();  
+
+====================================================
+
+1. DriverManager class
+
+The DriverManager class acts as an interface between user and drivers. It keeps track of the drivers that are available and handles establishing a connection between a database and the appropriate driver. 
+
+2. Connection interface
+
+A Connection is the session between java application and database. The Connection interface is a factory of Statement, PreparedStatement, and DatabaseMetaData i.e. object of Connection can be used to get the object of Statement and DatabaseMetaData. The Connection interface provide many methods for transaction management like commit(), rollback() etc.
+
+3. Statement interface
+
+The Statement interface provides methods to execute queries with the database. The statement interface is a factory of ResultSet i.e. it provides factory method to get the object of ResultSet.
+
+4. ResultSet interface
+The object of ResultSet maintains a cursor pointing to a row of a table. Initially, cursor points to before the first row.
+
+5. PreparedStatement interface
+The PreparedStatement interface is a subinterface of Statement. It is used to execute parameterized query.
+String sql="insert into emp values(?,?,?)";  
+As you can see, we are passing parameter (?) for the values. Its value will be set by calling the setter methods of PreparedStatement.
+
+Why use PreparedStatement?
+Improves performance: The performance of the application will be faster if you use PreparedStatement interface because query is compiled only once.
+
+6. CallableStatement Interface
+CallableStatement interface is used to call the stored procedures and functions.
+
+We can have business logic on the database by the use of stored procedures and functions that will make the performance better because these are precompiled.
+
+Suppose you need the get the age of the employee based on the date of birth, you may create a function that receives date as the input and returns age of the employee as the output.
+
+7. Batch Processing in JDBC
+Instead of executing a single query, we can execute a batch (group) of queries. It makes the performance fast.
+
+The java.sql.Statement and java.sql.PreparedStatement interfaces provide methods for batch processing.
+
+Advantage of Batch Processing Fast Performance
+

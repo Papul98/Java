@@ -1,0 +1,23 @@
+package Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AllLocators {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+	WebDriver driver=new ChromeDriver();
+	
+	driver.get("https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_7hz2t19t5c_e&adgrpid=155259815513&hvpone=&hvptwo=&hvadid=674842289437&hvpos=&hvnetw=g&hvrand=9990535585007952129&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9299628&hvtargid=kwd-10573980&hydadcr=14453_2316415&gad_source=1");
+	driver.manage().window().maximize();
+	
+	//ID
+//	driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Glass");
+	
+	//Name
+	driver.findElement(By.name("url")).click();
+}
+}
+

@@ -1,0 +1,11 @@
+package Selenium;
+
+public class Call {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\USER\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		
+		demo obj = new demo();
+	}
+
+}

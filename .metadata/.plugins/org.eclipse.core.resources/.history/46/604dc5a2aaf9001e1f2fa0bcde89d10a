@@ -1,0 +1,11 @@
+package Selenium;
+
+public class Inauto {
+
+	public static void main(String[] args) {
+		Inharitance marge=new Inharitance();
+		marge.Navigate();
+
+	}
+
+}

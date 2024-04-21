@@ -1,0 +1,37 @@
+package Selenium;
+import java.io.File;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebsiteInteraction {
+	
+	WebDriver driver = new ChromeDriver();
+    void OpenWebsite() throws InterruptedException {
+		
+		driver.manage().window().maximize();
+		 driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		 Thread.sleep(5000);
+		 
+	}
+	 
+	 void Login() {
+		 WebElement un =driver.findElement(By.xpath("//input[@placeholder='Username']"));
+		 un.sendKeys("Admin");
+		 
+		 WebElement pd =driver.findElement(By.xpath("//input[@placeholder='Password']"));
+		 pd.sendKeys("admin123");
+		 
+	 }
+	 
+	 void Screenshot() {
+		 TakesScreenshot ts = (TakesScreenshot) driver;
+
+	        File src = ts.getScreenshotAs(OutputType.FILE);
+	        File path= new File("D:\\Screenshot\\Before Login.png");
+	 }
+}

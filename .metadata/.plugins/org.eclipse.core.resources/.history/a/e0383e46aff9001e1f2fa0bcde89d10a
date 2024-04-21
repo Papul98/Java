@@ -1,0 +1,10 @@
+package Selenium;
+
+public class WebsiteInteractionTest {
+
+	public static void main(String[] args) {
+		WebsiteInteraction obj=new WebsiteInteraction();
+		obj.OpenWebsite();
+	}
+
+}

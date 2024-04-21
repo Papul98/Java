@@ -1,0 +1,11 @@
+package Selenium;
+
+public class WebsiteInteractionTest {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebsiteInteraction obj=new WebsiteInteraction();
+		obj.OpenWebsite();
+		obj.Login();
+	}
+
+}

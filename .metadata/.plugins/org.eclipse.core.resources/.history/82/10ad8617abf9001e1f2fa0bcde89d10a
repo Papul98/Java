@@ -1,0 +1,11 @@
+package Selenium;
+
+public class CallingInharitance {
+
+	public static void main(String[] args) {
+		WebsiteInteraction marge=new WebsiteInteraction();
+		marge.Navigate();
+
+	}
+
+}

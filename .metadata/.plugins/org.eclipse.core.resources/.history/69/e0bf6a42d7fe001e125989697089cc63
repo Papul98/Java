@@ -1,0 +1,30 @@
+package Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FBacebook {
+	
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\USER\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+driver.get("https://www.facebook.com/");
+Thread.sleep(5000);
+
+WebElement un =driver.findElement(By.xpath("//input[@id='email']"));
+un.sendKeys("papulm98@gmail.com");
+Thread.sleep(5000);
+
+WebElement pd =driver.findElement(By.xpath("//input[@id='pass']"));
+pd.sendKeys("P@pul#$");
+Thread.sleep(5000);
+
+WebElement lb =driver.findElement(By.xpath("//button[@id='u_0_9_Me']"));
+lb.click();
+Thread.sleep(5000);
+driver.switchTo().alert().dismiss();
+}
+}

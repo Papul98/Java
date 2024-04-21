@@ -1,0 +1,25 @@
+package Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demo {
+	
+
+	WebDriver driver = new ChromeDriver();
+	
+	void Navigate() {
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		}
+	void Login() {
+		
+		WebElement un =driver.findElement(By.xpath("//input[@placeholder='Username']"));
+		un.sendKeys("Admin");
+
+		WebElement pd =driver.findElement(By.xpath("//input[@placeholder='Password']"));
+		pd.sendKeys("admin123");
+	}
+
+}

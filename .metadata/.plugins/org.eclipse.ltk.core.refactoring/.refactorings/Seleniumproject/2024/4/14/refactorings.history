@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Selenium.GlobalSQA&apos; to &apos;Demoguru99&apos;&#x0D;&#x0A;- Original project: &apos;Seleniumproject&apos;&#x0D;&#x0A;- Original element: &apos;Selenium.GlobalSQA&apos;&#x0D;&#x0A;- Renamed element: &apos;Selenium.Demoguru99&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GlobalSQA&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Selenium{GlobalSQA.java[GlobalSQA" matchStrategy="1" name="Demoguru99" qualified="false" references="true" similarDeclarations="false" stamp="1712385297479" textual="false" version="1.0"/>
+</session>
